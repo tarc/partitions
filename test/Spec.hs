@@ -11,4 +11,5 @@ main = do
 
 mainNumberLessThanSmallestPartition :: TestTree
 mainNumberLessThanSmallestPartition = testCase "Testing "
-  (assertEqual "There's no possible partition for such small number" [] (partition 3))
+  (assertEqual "There's no possible partition for such small number"
+  [] (partition 3 []))

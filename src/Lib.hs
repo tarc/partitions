@@ -2,5 +2,5 @@ module Lib
     ( partition
     ) where
 
-partition :: Integer -> [[Integer]]
-partition _ = []
+partition :: Integer -> [Integer] -> [[Integer]]
+partition _ [] = []

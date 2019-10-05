@@ -3,4 +3,4 @@ module Main where
 import Lib
 
 main :: IO ()
-main = print . partition $ 42
+main = print $ partition 42 $ []
