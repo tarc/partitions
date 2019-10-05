@@ -10,7 +10,8 @@ main = do
   defaultMain (testGroup "Our Library Tests"
     [
       noPartitionFromEmptySet ,
-      mainNumberLessThanSmallestPartition
+      mainNumberLessThanSmallestPartition ,
+      singlePartition
     ])
 
 noPartitionFromEmptySet :: TestTree
@@ -22,3 +23,8 @@ mainNumberLessThanSmallestPartition :: TestTree
 mainNumberLessThanSmallestPartition = testCase "Testing small value"
   (assertEqual "There's no possible partition for such small number"
   [] (partition 3 [4]))
+
+singlePartition :: TestTree
+singlePartition = testCase "Testing small value"
+  (assertEqual "There's no possible partition for such small number"
+  [[3]] (partition 3 [3]))
