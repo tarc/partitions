@@ -11,7 +11,9 @@ main = do
     [
       noPartitionFromEmptySet ,
       mainNumberLessThanSmallestPartition ,
-      singlePartition
+      singlePartition ,
+      singlePartition2 ,
+      twoPartitions
     ])
 
 noPartitionFromEmptySet :: TestTree
@@ -28,3 +30,13 @@ singlePartition :: TestTree
 singlePartition = testCase "Testing small value"
   (assertEqual "There's no possible partition for such small number"
   [[3]] (partition 3 [3]))
+
+singlePartition2 :: TestTree
+singlePartition2 = testCase "Testing small value"
+  (assertEqual "There's no possible partition for such small number"
+  [[1,1,1,1]] (partition 4 [1]))
+
+twoPartitions :: TestTree
+twoPartitions = testCase "Testing small value"
+  (assertEqual "There's no possible partition for such small number"
+  [[3,1],[1,1,1,1]] (partition 4 [3,1]))
