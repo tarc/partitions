@@ -1,9 +1,9 @@
 module Lib
-    ( partition
+    ( partitions
     ) where
 
-partition :: Word -> [Word] -> [[Word]]
-partition _ [] = []
-partition n (p:ps) = if n < p then (partition n ps)
-                     else if n == p then [ [n] ] ++ (partition n ps)
-                     else [ p:x | x <- (partition (n-p) $ p:ps) ] ++ (partition n ps)
+partitions :: Word -> [Word] -> [[Word]]
+partitions _ [] = []
+partitions n (p:ps) = if n < p then (partitions n ps)
+                     else if n == p then [ [n] ] ++ (partitions n ps)
+                     else [ p:x | x <- (partitions (n-p) $ p:ps) ] ++ (partitions n ps)
