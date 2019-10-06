@@ -1,6 +1,22 @@
+{-# LANGUAGE DeriveGeneric     #-}
+{-# LANGUAGE OverloadedStrings #-}
+
 module Main where
+
+import System.Environment   
+import Options.Generic
 
 import Lib
 
+data Parameters = Parameters Integer [Integer]
+    deriving (Generic, Show)
+
+instance ParseRecord Parameters
+
 main :: IO ()
-main = print $ partitions 25 $ [4,7]
+
+main = do
+    x <- getRecord "Program to Find all Possible Partitions"
+    print
+      (let Parameters value summands = (x :: Parameters)
+      in partitions (fromIntegral value) (map fromIntegral summands))
