@@ -41,6 +41,9 @@ packages:
 #
 # extra-deps: []
 
+extra-deps:
+  - natural-numbers-0.1.2.0
+
 # Override default flag values for local packages and extra-deps
 # flags: {}
 
