@@ -8,7 +8,7 @@ import Options.Generic
 
 import Lib
 
-data Parameters = Parameters Int [Int]
+data Parameters = Parameters Integer [Integer]
     deriving (Generic, Show)
 
 instance ParseRecord Parameters

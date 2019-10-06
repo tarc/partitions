@@ -24,6 +24,8 @@ dependencies:
 
 library:
   source-dirs: src
+  dependencies:
+  - natural-numbers
 
 executables:
   partitions-exe:
